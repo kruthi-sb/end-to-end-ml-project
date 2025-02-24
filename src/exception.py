@@ -1,5 +1,6 @@
 import sys # sys tracks all the exceptions
 import logging
+import logger # import the previously created logger file into this file so that the logs are tracked.
 
 def error_message_detail(error, error_detail:sys):  # error_detail is present inside sys.
     _,_,exc_tb=error_detail.exc_info() # exc_tb gives detials of the exception or error
@@ -17,11 +18,11 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message # it prints the error message when the custom exception is raised.
 
-"""# testing purpose 
+# testing purpose 
 if __name__=="__main__":
     try: 
         a = 1/0
     except Exception as e:
         logging.info("Divide by 0 error")
-        raise CustomException(e,sys)"""
+        raise CustomException(e,sys)
         
